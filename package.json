@@ -8,7 +8,6 @@
     "start": "ts-node ./auditSite.ts"
   },
   "author": "CMS Platform Team <cms@kjobrad.org>",
-
   "devDependencies": {
     "install": "^0.13.0",
     "ts-node": "^10.0.0",
@@ -17,6 +16,7 @@
   },
   "dependencies": {
     "chrome-launcher": "*",
+    "html-validator": "*",
     "lighthouse": "*"
   }
 }
