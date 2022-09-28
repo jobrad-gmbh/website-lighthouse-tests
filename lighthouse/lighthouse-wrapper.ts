@@ -1,12 +1,19 @@
 import { join } from "path";
 import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { launch } from "chrome-launcher";
-import dataContent from "../resources/data.json";
+import urlsToTest from "../resources/urls.json";
 import lighthouse from "lighthouse";
+
+enum REPORT_OUTPUT_TYPE {
+  html = 'html',
+  json = 'json'
+}
+
+const reportOutputType: REPORT_OUTPUT_TYPE = REPORT_OUTPUT_TYPE.html;
 
 export class LightHouseWrapper {
   private currentDateTime = new Date().toISOString();
-  private reportFolder = join(process.cwd(), `Reports/${this.currentDateTime}`);
+  private reportFolder = join(process.cwd(), `reports/lighthouse/${this.currentDateTime}`);
   private chrome: any;
 
   async auditSite(): Promise<void> {
@@ -25,12 +32,11 @@ export class LightHouseWrapper {
       let runnerResult = await lighthouse(testSource[index]["url"], options);
       let reportHtml = await runnerResult.report;
       await writeFileSync(
-        `${this.reportFolder}/${testSource[index]["pageName"].trim()}.html`,
+        `${this.reportFolder}/${testSource[index]["pageName"].trim()}.${reportOutputType}`,
         reportHtml
       );
     }
   }
-
 
   async setup(): Promise<void> {
     await this.makeReportDirectory();
@@ -38,7 +44,7 @@ export class LightHouseWrapper {
   }
 
   async getUrls(): Promise<{}[]> {
-    return dataContent.APP_NAME;
+    return urlsToTest.URLS;
   }
 
   async makeReportDirectory(): Promise<void> {
@@ -58,7 +64,8 @@ export class LightHouseWrapper {
   async getBrowserConfig(): Promise<any> {
     const options = {
       logLevel: "info",
-      output: "html",
+      output: reportOutputType,
+      onlyCategories: ['accessibility'],
       port: this.chrome.port,
     };
     return options;

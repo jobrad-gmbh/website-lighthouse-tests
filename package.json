@@ -1,22 +1,22 @@
 {
-  "name": "lighthouse",
+  "name": "website-lighthouse-tests",
   "version": "1.0.0",
-  "description": "Learning Webdriver Io",
+  "description": "lighthouse tests for jobrad.org",
+  "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./auditSite.ts"
   },
-  "author": "Akanksha Gupta",
-  "license": "",
+  "author": "CMS Platform Team <cms@kjobrad.org>",
+
   "devDependencies": {
     "install": "^0.13.0",
-    "npm": "^7.15.1",
     "ts-node": "^10.0.0",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
   },
   "dependencies": {
-    "chrome-launcher": "^0.14.0",
-    "lighthouse": "^8.0.0"
+    "chrome-launcher": "*",
+    "lighthouse": "*"
   }
 }

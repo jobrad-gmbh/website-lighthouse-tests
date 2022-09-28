@@ -1,0 +1,32 @@
+{
+    "URLS": [
+        {
+            "pageName": "0001-Homepage",
+            "url": "https://www.jobrad.org/"
+        },
+        {
+            "pageName": "1000-Aktuelles",
+            "url": "https://www.jobrad.org/aktuelles.html"
+        },
+        {
+            "pageName": "1001-Vorteile",
+            "url": "https://www.jobrad.org/aktuelles/vorteile.html"
+        },
+        {
+            "pageName": "1002-Parkraum",
+            "url": "https://www.jobrad.org/aktuelles/vorteile/parkraumnot.html"
+        },
+        {
+            "pageName": "1003-Gesundheitsmanagement",
+            "url": "https://www.jobrad.org/aktuelles/vorteile/betriebliches-gesundheitsmanagement.html"
+        },
+        {
+            "pageName": "1004-Umwelt",
+            "url": "https://www.jobrad.org/aktuelles/vorteile/umwelt.html"
+        },
+        {
+            "pageName": "1005-Klimarechner",
+            "url": "https://www.jobrad.org/aktuelles/vorteile/klimarechner.html"
+        }
+    ]
+}
