@@ -1,7 +1,7 @@
 import { join } from "path";
 import { writeFileSync, mkdirSync, existsSync } from "fs";
 import { launch } from "chrome-launcher";
-import urlsToTest from "../resources/urls.json";
+import urlsToTest from "../config/urls.json";
 import lighthouse from "lighthouse";
 
 enum REPORT_OUTPUT_TYPE {
